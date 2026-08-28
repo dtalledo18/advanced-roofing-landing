@@ -6,7 +6,7 @@ export default function InfinityText() {
     return (
         <section
             id="infinity-text"
-            className="relative w-full bg-[#F2F2F2] py-8 sm:py-10 font-clash overflow-hidden"
+            className="relative w-full bg-[#F2F2F2] py-6 sm:py-10 lg:py-10 font-clash overflow-hidden"
         >
             <style jsx>{`
                 @keyframes marquee {
@@ -20,11 +20,11 @@ export default function InfinityText() {
                 .marquee-track {
                     display: flex;
                     width: max-content;
-                    animation: marquee 102s linear infinite;
+                    animation: marquee 142s linear infinite;
                 }
             `}</style>
 
-            <div className="relative w-full">
+            <div className="relative w-full flex items-center">
                 <div className="marquee-track">
                     {/* Duplicamos el bloque de frases dos veces para el loop infinito sin cortes */}
                     {[0, 1].map((block) => (
@@ -32,10 +32,10 @@ export default function InfinityText() {
                             {Array.from({ length: 4 }).map((_, i) => (
                                 <span
                                     key={i}
-                                    className="flex items-center flex-shrink-0 font-extrabold text-6xl sm:text-8xl lg:text-9xl leading-none tracking-tight whitespace-nowrap px-6 sm:px-10 text-[#1E4F91]"
+                                    className="flex items-center flex-shrink-0 font-extrabold text-[80px] sm:text-[130px] lg:text-[180px] xl:text-[250px] leading-none tracking-wide whitespace-nowrap px-8 sm:px-14 lg:px-20 text-[#1F6AB3]"
                                 >
-                  {phrase}
-                </span>
+                                    {phrase}
+                                </span>
                             ))}
                         </div>
                     ))}
@@ -43,9 +43,9 @@ export default function InfinityText() {
 
                 {/* ── OVERLAY: fade fijo pegado al borde derecho ── */}
                 <div
-                    className="absolute inset-y-0 right-0 w-16 sm:w-32 lg:w-48 z-10 pointer-events-none"
+                    className="absolute inset-y-0 right-0 w-24 sm:w-48 lg:w-200 z-10 pointer-events-none"
                     style={{
-                        background: 'linear-gradient(270deg, #F2F2F2 0%, rgba(242,242,242,0) 100%)',
+                        background: 'linear-gradient(270deg, rgba(242,242,242,0.4) 0%, rgba(242,242,242,0) 100%)',
                     }}
                 />
             </div>

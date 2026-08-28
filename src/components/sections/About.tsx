@@ -51,7 +51,7 @@ function ProgressBar({ label, value, delay }: { label: string; value: number; de
                     whileInView={{ width: `${value}%` }}
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 1.2, delay, ease: [0.25, 1, 0.5, 1] }}
-                    className="h-full rounded-full bg-[#1871D6]"
+                    className="h-full rounded-full bg-[#1F6AB3]"
                 />
             </div>
         </div>
@@ -62,9 +62,9 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative w-full bg-[#FFFFFF] py-20 sm:py-28 font-urbanist overflow-hidden"
+            className="relative w-full bg-[#F0F0F0] py-20 sm:py-28 font-urbanist overflow-hidden"
         >
-            <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-8 items-start">
                     {/* Heading + progress bars */}
                     <motion.div
@@ -74,7 +74,7 @@ export default function About() {
                         transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
                         className="w-full lg:w-[280px] flex-shrink-0 flex flex-col justify-between lg:h-[240px]"
                     >
-                        <h2 className="font-clash font-extrabold text-[#1871D6] text-4xl sm:text-5xl leading-[1.05] tracking-tight">
+                        <h2 className="font-clash font-normal text-[#1F6AB3] text-4xl sm:text-5xl leading-[1.05] tracking-normal">
                             This is
                             <br />
                             Advanced:
@@ -96,25 +96,25 @@ export default function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.4 }}
                                 transition={{ duration: 0.8, delay: 0.15 + i * 0.15, ease: [0.25, 1, 0.5, 1] }}
-                                className="relative bg-[#E4E4E4] rounded-2xl p-6 sm:p-7 h-[230px] flex flex-col justify-between"
+                                className="relative bg-[#E4E4E4] rounded-2xl p-6 sm:p-7 h-[250px] flex flex-col justify-between"
                             >
                                 <div>
                                     <div className="flex items-start justify-between">
-                                        <p className="text-gray-800 font-urbanist text-sm max-w-[120px] leading-snug">
+                                        <p className="text-gray-700 font-urbanist text-lg font-semibold max-w-[120px] leading-snug">
                                             {stat.label}
                                         </p>
                                         <div className="w-8 h-8 rounded-full bg-[#F3C200] flex items-center justify-center flex-shrink-0">
                                             <ArrowUpRight size={16} className="text-black" strokeWidth={2.5} />
                                         </div>
                                     </div>
-                                    <div className="w-8 h-px bg-gray-400 mt-2" />
+                                    <div className="w-20 h-px bg-gray-800 mt-2" />
                                 </div>
 
                                 <div className="flex items-end justify-between">
-                  <span className="font-clash font-extrabold text-[#1871D6] text-5xl sm:text-6xl tracking-tight">
+                  <span className="font-clash font-extrabold text-[#1F6AB3] text-5xl sm:text-6xl tracking-tight">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </span>
-                                    <span className="text-gray-500 font-urbanist text-sm mb-1">{stat.index}</span>
+                                    <span className="text-gray-900 font-urbanist text-sm mb-1">{stat.index}</span>
                                 </div>
                             </motion.div>
                         ))}

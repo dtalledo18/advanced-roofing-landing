@@ -40,7 +40,7 @@ export default function Footer() {
 
     return (
         <footer className="relative w-full bg-white font-urbanist overflow-hidden border-t border-gray-100">
-            <div className="max-w-6xl mx-auto px-6 pt-16 pb-8">
+            <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -51,8 +51,12 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="flex flex-col gap-4 lg:col-span-1">
                         <div className="flex items-center gap-2">
-                            <div className="w-9 h-9 rounded-full bg-[#1871D6]/10 flex items-center justify-center">
-                                <HomeIcon className="text-[#1871D6]" size={18} strokeWidth={2} />
+                            <div className="w-10 h-10 rounded-full bg-[#3C90E1] p-1 flex items-center justify-center">
+                                <img
+                                    src="/icon.png"
+                                    alt="Advanced Roofing Logo"
+                                    className="h-full w-auto object-contain drop-shadow-md"
+                                />
                             </div>
                             <span className="font-clash font-bold text-[#0A1E3A] text-lg leading-none">
                 Advanced Roofing
