@@ -4,11 +4,17 @@ import { motion } from 'framer-motion';
 import { ChevronsDown } from 'lucide-react';
 
 function CurveLine({ side }: { side: 'left' | 'right' }) {
-    const flip = side === 'left' ? 'scale-x-[-1]' : '';
+    const scaleXValue = side === 'left' ? -1 : 1;
+    const initialX = side === 'left' ? 160 : -160;
 
     return (
-        <svg
-            className={`${flip} w-5 sm:w-8 lg:w-10 h-full max-h-[650px] sm:max-h-[750px] pointer-events-none flex-shrink-0`}
+        <motion.svg
+            style={{ scaleX: scaleXValue }}
+            initial={{ x: initialX, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.9, delay: 0.5, ease: [0.25, 1, 0.5, 1] }}
+            className="w-5 sm:w-8 lg:w-10 h-full max-h-[650px] sm:max-h-[750px] pointer-events-none flex-shrink-0"
             viewBox="0 0 40 783"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +32,7 @@ function CurveLine({ side }: { side: 'left' | 'right' }) {
                     <stop offset="100%" stopColor="#00589E" stopOpacity="0" />
                 </linearGradient>
             </defs>
-        </svg>
+        </motion.svg>
     );
 }
 
@@ -34,31 +40,31 @@ export default function Introduction() {
     return (
         <section
             id="introduction"
-            className="relative w-full bg-[#EFEFEF] overflow-hidden py-12 sm:py-20 font-urbanist"
+            className="relative w-full bg-[#EFEFEF] overflow-hidden pt-12 sm:pt-20 font-urbanist"
         >
             <div className="max-w-7xl mx-auto px-4 flex items-center justify-center">
-                {/* ── FLECHA IZQUIERDA ── */}
+                {/* ── FLECHA IZQUIERDA — animación 3: crece desde el centro hacia afuera ── */}
                 <CurveLine side="left" />
 
                 {/* ── CONTENIDO CENTRAL (Enmarcado por las flechas) ── */}
                 <div className="flex flex-col items-center text-center px-2 sm:px-8 flex-1">
-                    {/* Título Principal */}
+                    {/* Título Principal — animación 1: entra desde abajo */}
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
-                        transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+                        transition={{ duration: 0.8, delay: 0, ease: [0.25, 1, 0.5, 1] }}
                         className="font-clash font-medium text-[#1F6AB3] text-5xl sm:text-7xl lg:text-8xl xl:text-[110px] leading-[1.0] tracking-tight max-w-4xl"
                     >
                         We&apos;ve got you covered
                     </motion.h2>
 
-                    {/* Fila: texto izq / imagen / texto der */}
+                    {/* Fila: texto izq / imagen / texto der — animación 2: entra desde abajo, después del título */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.25, ease: [0.25, 1, 0.5, 1] }}
                         className="flex items-center justify-center gap-6 sm:gap-10 mt-10 sm:mt-16 lg:mt-20"
                     >
                         <p className="text-[#1F6AB3] font-urbanist font-normal text-base sm:text-xl lg:text-2xl text-right leading-tight max-w-[140px] sm:max-w-[180px]">
@@ -77,12 +83,12 @@ export default function Introduction() {
                         </p>
                     </motion.div>
 
-                    {/* Scroll indicator */}
+                    {/* Scroll indicator — animación 2: mismo grupo que la fila, entra junto con ella */}
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.8, delay: 0.25, ease: [0.25, 1, 0.5, 1] }}
                         className="flex flex-col items-center gap-1.5 mt-8 sm:mt-7"
                     >
                         <span className="text-gray-900 text-sm sm:text-2xl font-normal tracking-tight">
@@ -98,7 +104,7 @@ export default function Introduction() {
                     </motion.div>
                 </div>
 
-                {/* ── FLECHA DERECHA ── */}
+                {/* ── FLECHA DERECHA — animación 3: crece desde el centro hacia afuera ── */}
                 <CurveLine side="right" />
             </div>
         </section>
