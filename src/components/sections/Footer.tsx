@@ -41,12 +41,146 @@ export default function Footer() {
     return (
         <footer className="relative w-full bg-white font-urbanist overflow-hidden border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
+                {/* ══════════════ MOBILE ══════════════ */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+                    className="sm:hidden flex flex-col items-center text-center gap-8"
+                >
+                    {/* Brand */}
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="flex flex-col items-center gap-3">
+                            <div className="w-14 h-14 rounded-full bg-[#3C90E1] p-2.5 flex items-center justify-center">
+                                <img
+                                    src="/icon.png"
+                                    alt="Advanced Roofing Logo"
+                                    className="h-full w-auto object-contain drop-shadow-md"
+                                />
+                            </div>
+                            <span className="font-clash font-bold text-[#0A1E3A] text-2xl leading-none">
+                                Advanced Roofing
+                            </span>
+                        </div>
+                        <p className="text-gray-500 text-base leading-relaxed max-w-[300px]">
+                            Protecting homes and businesses with honest inspections and quality roofing since 2004.
+                        </p>
+                        <div className="flex gap-4 mt-1">
+                            <a
+                                href="#"
+                                aria-label="Facebook"
+                                className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#1871D6] hover:border-[#1871D6]/40 transition-colors"
+                            >
+                                <FacebookIcon size={20} />
+                            </a>
+                            <a
+                                href="#"
+                                aria-label="Instagram"
+                                className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#1871D6] hover:border-[#1871D6]/40 transition-colors"
+                            >
+                                <InstagramIcon size={20} />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="w-full h-px bg-gray-100" />
+
+                    {/* Navigation */}
+                    <div className="flex flex-col items-center gap-4 w-full">
+                        <h4 className="font-clash font-bold text-[#0A1E3A] text-sm uppercase tracking-wide">
+                            Navigation
+                        </h4>
+                        <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+                            {navLinks.map((link) => (
+                                <li key={link.label}>
+                                    <button
+                                        onClick={() => scrollTo(link.href)}
+                                        className="text-gray-500 hover:text-[#1871D6] text-base transition-colors cursor-pointer"
+                                    >
+                                        {link.label}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="w-full h-px bg-gray-100" />
+
+                    {/* Services */}
+                    <div className="flex flex-col items-center gap-4 w-full">
+                        <h4 className="font-clash font-bold text-[#0A1E3A] text-sm uppercase tracking-wide">
+                            Services
+                        </h4>
+                        <ul className="flex flex-col items-center gap-3">
+                            {services.map((service) => (
+                                <li key={service} className="text-gray-500 text-base">
+                                    {service}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="w-full h-px bg-gray-100" />
+
+                    {/* Contact */}
+                    <div className="flex flex-col items-center gap-4 w-full">
+                        <h4 className="font-clash font-bold text-[#0A1E3A] text-sm uppercase tracking-wide">
+                            Contact
+                        </h4>
+                        <ul className="flex flex-col items-center gap-3">
+                            <li>
+                                <a
+                                    href="tel:2244264773"
+                                    className="flex items-center gap-2.5 text-gray-500 hover:text-[#1871D6] text-base transition-colors"
+                                >
+                                    <Phone size={17} className="flex-shrink-0" />
+                                    224-426-4773
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="mailto:info@advancedroofingteam.com"
+                                    className="flex items-center gap-2.5 text-gray-500 hover:text-[#1871D6] text-base transition-colors"
+                                >
+                                    <Mail size={17} className="flex-shrink-0" />
+                                    info@advancedroofingteam.com
+                                </a>
+                            </li>
+                            <li className="flex items-center gap-2.5 text-gray-500 text-base">
+                                <MapPin size={17} className="flex-shrink-0" />
+                                Des Plaines, IL
+                            </li>
+                        </ul>
+                    </div>
+                </motion.div>
+
+                {/* Divider + CTA final — mobile */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="sm:hidden mt-8 pt-6 border-t border-gray-100 flex flex-col items-center gap-5"
+                >
+                    <button
+                        onClick={() => scrollTo('#contact')}
+                        className="w-full max-w-[300px] flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-[#F3C200] text-black font-urbanist font-bold text-sm hover:brightness-105 transition-all cursor-pointer"
+                    >
+                        Get Your Free Inspection
+                    </button>
+                    <p className="text-gray-400 text-xs text-center">
+                        © {year} Advanced Roofing. All rights reserved.
+                    </p>
+                </motion.div>
+
+                {/* ══════════════ TABLET/DESKTOP — código original sin tocar ══════════════ */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+                    className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-10"
                 >
                     {/* Brand */}
                     <div className="flex flex-col gap-4 lg:col-span-1">
@@ -148,13 +282,13 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
-                {/* Divider + CTA final */}
+                {/* Divider + CTA final — tablet/desktop, sin tocar */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mt-12 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4"
+                    className="hidden sm:flex mt-12 pt-6 border-t border-gray-100 flex-col sm:flex-row items-center justify-between gap-4"
                 >
                     <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
                         © {year} Advanced Roofing. All rights reserved.

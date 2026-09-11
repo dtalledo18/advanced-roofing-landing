@@ -62,7 +62,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative w-full bg-[#F0F0F0] pb-30 pt-20 sm:pb-38 sm:pt-28 font-urbanist overflow-hidden"
+            className="relative w-full bg-[#F0F0F0] pb-10 pt-10 sm:pb-38 sm:pt-28 font-urbanist overflow-hidden"
         >
             <div className="max-w-7xl mx-auto px-6">
                 {/* ── Todo el bloque (heading + barras + 3 cards) se desplaza como una sola unidad ── */}
@@ -75,7 +75,7 @@ export default function About() {
                 >
                     {/* Heading + progress bars */}
                     <div className="w-full lg:w-[280px] flex-shrink-0 flex flex-col justify-between lg:h-[240px]">
-                        <h2 className="font-clash font-normal text-[#1F6AB3] text-4xl sm:text-5xl leading-[1.05] tracking-normal">
+                        <h2 className="font-clash font-normal text-[#1F6AB3] text-4xl sm:text-5xl leading-[1.05] tracking-normal text-center sm:text-left">
                             This is
                             <br />
                             Advanced:
@@ -89,11 +89,11 @@ export default function About() {
                     </div>
 
                     {/* Stat cards */}
-                    <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}
-                                className="relative bg-[#E4E4E4] rounded-2xl p-6 sm:p-7 h-[250px] flex flex-col justify-between"
+                                className="relative bg-[#E4E4E4] rounded-2xl p-5 sm:p-7 h-[180px] sm:h-[250px] flex flex-col justify-between"
                             >
                                 <div>
                                     <div className="flex items-start justify-between">
