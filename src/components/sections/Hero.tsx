@@ -174,7 +174,7 @@ export default function Hero() {
                         transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
                         className="relative z-[5] text-center select-none w-full pointer-events-none"
                     >
-                        <h1 className="font-clash font-semibold leading-[0.88] text-white/70 text-7xl tracking-[0.02em]">
+                        <h1 className="font-clash font-semibold leading-[0.88] text-white/70 text-7xl mt-5 tracking-[0.02em]">
                             <span className="block">Advanced</span>
                             <span className="block">Roofing</span>
                         </h1>
