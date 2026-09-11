@@ -187,12 +187,12 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="relative z-20 flex flex-col items-center text-center pointer-events-auto"
                     >
-                        <h2 className="font-clash font-semibold text-white text-[1.85rem] leading-[1.2] tracking-wide max-w-[420px]">
+                        <h2 className="font-clash font-semibold text-white text-[1.65rem] leading-[1.2] tracking-wide max-w-[420px]">
                             Protect your home with
                             <br />
                             a Free Roof Inspection
                         </h2>
-                        <p className="text-white/85 text-md font-urbanist mt-3 leading-relaxed max-w-[380px]">
+                        <p className="text-white/85 text-sm font-urbanist mt-3 leading-relaxed max-w-[350px]">
                             Get a free inspection to identify potential issues before they become costly repairs.
                         </p>
 
