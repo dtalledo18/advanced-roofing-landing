@@ -49,7 +49,7 @@ export default function Hero() {
 
             <section
                 id="hero"
-                className="relative w-full h-[95vh] sm:h-[105vh] overflow-hidden font-urbanist bg-[#1871D6]"
+                className="relative w-full h-screen sm:h-[105vh] overflow-hidden font-urbanist bg-[#1871D6]"
             >
                 {/* ── CAPA 0: FONDO DEGRADADO CIELO (z-0) ── */}
                 <div
