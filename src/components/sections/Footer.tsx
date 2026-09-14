@@ -131,11 +131,11 @@ export default function Footer() {
                         <ul className="flex flex-col items-center gap-3">
                             <li>
                                 <a
-                                    href="tel:2244264773"
+                                    href="tel:8478924878"
                                     className="flex items-center gap-2.5 text-gray-500 hover:text-[#1871D6] text-base transition-colors"
                                 >
                                     <Phone size={17} className="flex-shrink-0" />
-                                    224-426-4773
+                                    847-892-4878
                                 </a>
                             </li>
                             <li>
@@ -258,11 +258,11 @@ export default function Footer() {
                         <ul className="flex flex-col gap-3">
                             <li>
                                 <a
-                                    href="tel:2244264773"
+                                    href="tel:8478924878"
                                     className="flex items-center gap-2.5 text-gray-500 hover:text-[#1871D6] text-sm transition-colors"
                                 >
                                     <Phone size={15} className="flex-shrink-0" />
-                                    224-426-4773
+                                    847-892-4878
                                 </a>
                             </li>
                             <li>

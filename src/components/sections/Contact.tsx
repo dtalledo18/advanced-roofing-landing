@@ -332,7 +332,7 @@ export default function Contact() {
                                 {/* Direct Call Button */}
                                 <div className="flex justify-center mt-5">
                                     <motion.a
-                                        href="tel:2244264773"
+                                        href="tel:8478924878"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.97 }}
                                         className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-medium text-sm shadow-md"
@@ -344,7 +344,7 @@ export default function Contact() {
                                         >
                                             <Phone size={15} className="text-[#FFCC00] fill-[#FFCC00] ml-1" />
                                         </motion.div>
-                                        <span className="font-bold tracking-wide text-white">224-426-4773</span>
+                                        <span className="font-bold tracking-wide text-white">847-892-4878</span>
                                     </motion.a>
                                 </div>
                             </div>
