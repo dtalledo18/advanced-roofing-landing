@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Advanced Roofing',
   ],
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.png',
   },
   openGraph: {
     title: 'Advanced Roofing | Free Roof Inspections',
